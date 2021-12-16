@@ -7,7 +7,7 @@ const rollbar = new Rollbar({
   captureUncaught: true,
   captureUnhandledRejections: true,
 })
-
+let students = []
 const app = express()
 
 app.use(express.json())
