@@ -17,6 +17,15 @@ app.get('/', (req, res) => {
     rollbar.info('html file serverd successfully')
 })
 
+
+app.get('/', (req, res) => {
+    try{
+        doesntExist()
+    } catch (error) {
+        console.log(error)
+    }
+})
+
 app.use(rollbar.errorHandler())
 
 const port = process.env.PORT || 4545
