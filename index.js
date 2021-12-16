@@ -30,7 +30,11 @@ app.post('/api/student', (req, res) => {
 
 
 app.get('/', (req, res) => {
-        rollbar.error("something went wrong!!!")
+        rollbar.critical("something went wrong!!!")
+})
+
+app.get('/', (req, res) => {
+        rollbar.warning("warning, danger will robinson")
 })
 
 app.use(rollbar.errorHandler())
