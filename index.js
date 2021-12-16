@@ -14,7 +14,7 @@ app.use(express.json())
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'))
-    rollbar.info('html file serverd successfully')
+    rollbar.info('html file served successfully')
 })
 
 app.post('/api/student', (req, res) => {
@@ -30,7 +30,7 @@ app.post('/api/student', (req, res) => {
 
 
 app.get('/', (req, res) => {
-        rollbar.error("something went wrong!")
+        rollbar.error("something went wrong!!!")
 })
 
 app.use(rollbar.errorHandler())
