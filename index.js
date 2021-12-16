@@ -19,11 +19,7 @@ app.get('/', (req, res) => {
 
 
 app.get('/', (req, res) => {
-    try{
-        doesntExist()
-    } catch (error) {
         rollbar.error("something went wrong!")
-    }
 })
 
 app.use(rollbar.errorHandler())
