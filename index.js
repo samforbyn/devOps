@@ -23,7 +23,7 @@ app.post('/api/student', (req, res) => {
     
     students.push(name)
     
-    rollbar.critical('Student added succesfully', {author: "Samuelito", type: "manual"})
+    rollbar.info('Student added succesfully', {author: "Samuelito", type: "manual"})
     res.status(200).send(students)
 })
 
