@@ -12,6 +12,11 @@ const app = express()
 
 app.use(express.json())
 
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/index.html'))
+    rollbar.info('html file serverd successfully')
+})
+
 app.post('/api/student', (req, res) => {
     let {name} = req.body
     name = name.trim()
