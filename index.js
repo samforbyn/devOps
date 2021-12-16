@@ -12,10 +12,16 @@ const app = express()
 
 app.use(express.json())
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/index.html'))
-    rollbar.info('html file serverd successfully')
+app.post('/api/student', (req, res) => {
+    let {name} = req.body
+    name = name.trim()
+    
+    students.push(name)
+    
+    rollbar.critical('Student added succesfully', {author: "Samuelito", type: "manual"})
+    res.status(200).send(students)
 })
+
 
 
 app.get('/', (req, res) => {
